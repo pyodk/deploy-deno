@@ -31,7 +31,7 @@ GitHub repository, follow these steps:
 
 ### `deployctl` CLI
 
-1. Install `deployctl`:
+1. Install [`deployctl`](https://github.com/denoland/deployctl):
 
 ```bash
 deno install -gArf jsr:@deno/deployctl
@@ -54,6 +54,35 @@ deployctl deploy --include=.next/standalone .next/standalone/server.cjs
 
 For more information, see our
 [deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying#self-hosting).
+
+### `create-next-app` with `jsr:@deno/nextjs-start`
+
+If you've created a Next.js app using
+[`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app),
+you can deploy this to Deno Deploy right from the command line.
+
+Since starting a Next.js server requires the command `next start`, in Deno
+Deploy, you can replace that command with
+[`jsr:@deno/nextjs-start`](https://jsr.io/@deno/nextjs-start).
+
+To deploy your `create-next-app` to Deno Deploy:
+
+1. Build your app
+
+```bash
+deno build
+```
+
+2. Deploy
+
+After installing [`deployctl`](https://github.com/denoland/deployctl):
+
+```bash
+deployctl deploy --include=.next --include=public jsr:@deno/nextjs-start
+```
+
+Learn more about configuring
+[`jsr:@deno/nextjs-start`](https://jsr.io/@deno/nextjs-start).
 
 ## Learn More
 
