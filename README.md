@@ -78,17 +78,11 @@ deno task build
 After installing [`deployctl`](https://github.com/denoland/deployctl):
 
 ```bash
-deployctl deploy --include=.next --include=public jsr:@deno/nextjs-start
+deployctl deploy --include=.next --include=public jsr:@deno/nextjs-start/v15
 ```
 
 Learn more about configuring
 [`jsr:@deno/nextjs-start`](https://jsr.io/@deno/nextjs-start).
-
-Using Next.js 15? Try the below deploy command, which uses another entrypoint:
-
-```bash
-deployctl deploy --include=.next --include=public https://raw.githubusercontent.com/arnauorriols/deno-next-start/refs/heads/v15/main.ts
-```
 
 ## Learn More
 
